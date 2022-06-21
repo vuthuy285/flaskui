@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block title %}List {% endblock %}
+
+{% block content %}
+    <h1>Danh sach nhan vien</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Tên đăng nhập</th>
+                <th scope="col">Họ tên</th>
+                <th scope="col">Mật khẩu</th>
+                <th scope="col">Email</th>
+                <th scope="col">Số điện thoại</th>
+                <th scope="col">Phòng</th>
+                <th scope="col">Chức vụ</th>
+                <th scope="col">Chuyên ngành</th>
+                <th scope="col">Lương CB</th>
+                <th scope="col">HSL</th>
+                <th scope="col">Lương</th>
+            </tr>
+        </thead>
+        <tbody>
+                {% for row in rec %}
+                    <tr>
+                        <td>{{ row.ID }}</th>
+                        <td>{{ row.username }}</td>
+                        <td>{{ row.name }}</td>
+                        <td>{{ row.pass }}</td>
+                        <td>{{ row.email }}</td>
+                        <td>{{ row.phone }}</td>
+                        <td>{{ row.phong }}</td>
+                        <td>{{ row.chucvu }}</td>
+                        <td>{{ row.chuyennganh }}</td>
+                        <td>{{ row.luongcb }}</td>
+                        <td>{{ row.hsl }}</td>
+                        <td>{{ row.luong }}</td>
+                    </tr>
+                {% endfor %}  
+        </tbody>
+    </table>
+{% endblock %}

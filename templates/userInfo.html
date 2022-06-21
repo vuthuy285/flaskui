@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block title %}{{name}} INFO {% endblock %}
+
+{% block content %}
+<div style="display: flex; justify-content: space-between;">
+    <h2>Here is {{name}}'s information</h2>
+    <form action="/logout" method="post">
+        <button style="background-color: pink; color: white; margin: 10px;" type ="submit">Mail</button> 
+        <button style="background-color: pink; color: white; margin: 10px;" type ="submit">Logout</button>    
+    </form>
+</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Tên đăng nhập</th>
+                <th scope="col">Họ tên</th>
+                <th scope="col">Email</th>
+                <th scope="col">Số điện thoại</th>
+                <th scope="col">Phòng</th>
+                <th scope="col">Chức vụ</th>
+                <th scope="col">Chuyên ngành</th>
+                <th scope="col">Lương CB</th>
+                <th scope="col">HSL</th>
+                <th scope="col">Lương</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for item in rec %}
+                    <td>{{ item }}</th>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+</div>
+    <!-- <form action="/find" method="POST"> 
+        <label for="">Find</label><br>
+        <input type="text" name="name"></input><br>
+        <button style="background-color: pink; color: white;" type ="submit">submit</button>
+    </form> -->
+{% endblock %}

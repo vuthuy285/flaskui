@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %} {{name}} {% endblock %}
+
+{% block content %}
+<div style="display: flex; justify-content: space-between;">
+    <h2>Welcome {{name}}</h2>
+    <form action="/logout" method="post">
+        <button style="background-color: pink; color: white; margin: 10px;" type ="submit">Mail</button> 
+        <button style="background-color: pink; color: white; margin: 10px;" type ="submit">Logout</button>   
+    </form>
+</div>
+
+
+<h4>
+    <a href="/userList.html">>>Xem danh sách nhân viên</a><br>
+    <a href="/insert">>>Thêm nhân viên</a><br>
+    <a href="/update">>>Sửa thông tin nhân viên</a><br>
+    <a href="/delete">>>Xóa nhân viên</a><br>
+    <a href="/find">>>Tìm nhân viên</a>
+    <a href="/resetPass">>>Đặt lại mật khẩu cho nhân viên</a>
+</h4>
+
+
+<!-- <form action="/select" method="get">
+    <button style="background-color: pink; color: white; margin: 10px;" type ="submit">Xem tat ca user</button>    
+</form> -->
+{% endblock %}
