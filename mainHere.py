@@ -72,6 +72,10 @@ def login():
             return redirect(url_for("welcome", name=user_name))
     return render_template('login.html')
 
+@app.route("/about", methods=['POST', 'GET'])
+def about():
+    return render_template('about.html')
+
 @app.route("/logout", methods=['GET', 'POST'])
 def logout():
     if request.method == "POST":

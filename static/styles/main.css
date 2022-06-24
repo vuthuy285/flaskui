@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial;
+  font-size: 16px;
+  background: #5e42a6;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.sidebar {
+  padding: 10% 50px 0px 50px;
+  height: 100vh;
+  width: 19%;
+  background: #312450;
+  font-size: 0.65em;
+}
+
+.nav {
+  position: relative;
+  margin: 0 15%;
+  text-align: right;
+  font-weight: bold;
+}
+
+.nav ul {
+  list-style: none;
+}
+
+.nav ul li {
+  position: relative;
+  margin: 3.2em 0;
+}
+
+.nav ul li a {
+  line-height: 5em;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.4em;
+  color: rgba(255, 255, 255, 0.35);
+  display: block;
+  transition: all ease-out 300ms;
+}
+
+.nav ul li.active a {
+  color: white;
+}
+
+.nav ul li:not(.active)::after {
+  opacity: 0.2;
+}
+
+.nav ul li:not(.active):hover a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.nav ul li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.2em;
+  background: black;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(to right, #5e42a6, #b74e91);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+}
+
+.item-top {
+  display: flex;
+  background-color: aliceblue;
+  border-radius: 5px;
+  padding: 30px;
+  width: 75vw;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-main {
+  margin-top: 40px;
+  display: flex;
+  background-color: aliceblue;
+  border-radius: 5px;
+  padding: 30px;
+  width: 75vw;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-decoration: none;
+}
+
+.button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: deeppink;
+  border-radius: 10rem;
+  z-index: -2;
+}
+
+.button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: lightcoral;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+
+.button:hover {
+  color: #fff;
+}
+
+.button:hover:before {
+  width: 100%;
+}

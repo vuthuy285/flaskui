@@ -1,27 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" crossorigin="anonymous"
-	    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" >
-    
-	    <script crossorigin="anonymous"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" >
-	    </script>
+    <link rel="stylesheet" href= "{{ url_for('static',filename='styles/login.css') }}">
     <title>TNN Company</title>
 </head>
-<body>
-    <h1>Welcom to TNN Company</h1>
-    <h2>Do not worry, your information is safe here</h2>
 
-    <form action="/login" method="post"> 
-        <label for="">Username</label><br>
-        <input type="text" name="name"></input><br>
-        <label for="">Password</label><br>
-        <input type="password" name="password"></input><br>
-        <button style="background-color: pink; color: white;" type ="submit">Login</button>
-    </form>
+<body>
+    <div class="header">
+        <h1>Welcome to TNN Company</h1>
+        <h2>Don't worry, your information is safe here</h2>
+    </div>
+    <div class="container">
+        <form action="/login" method="post">
+            <h1>Login Form</h1>
+            <div class="input-form">
+                <div class="input-field">
+                    <input type="text" name="name" placeholder="Username" />
+                </div>
+                <div class="input-field">
+                    <input type="password" name="password" class="pswrd" placeholder="Password" />
+                    <span class="show">SHOW</span>
+                </div>
+                <div class="button">
+                    <div class="inner"></div>
+                    <button type="submit">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        var input = document.querySelector('.pswrd');
+        var show = document.querySelector('.show');
+        show.addEventListener('click', active);
+
+        function active() {
+            if (input.type === "password") {
+                input.type = "text";
+                show.style.color = "#1DA1F2";
+                show.textContent = "HIDE";
+            } else {
+                input.type = "password";
+                show.textContent = "SHOW";
+                show.style.color = "#111";
+            }
+        }
+    </script>
 </body>
+
 </html>
